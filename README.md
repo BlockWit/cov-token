@@ -1,6 +1,6 @@
 ![Covesting Token](logo.png "Covesting token")
 
-# Inspem smart contract
+# Covesting smart contract
 
 * _Standart_        : ERC20
 * _Name_            : Covesting
