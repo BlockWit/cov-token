@@ -28,7 +28,7 @@ contract COVToken is ERC20, AccessControl {
 
 		mapping (address => uint256) public locks;
 
-    mapping(address => bool)  public registeredCallbacks;
+    address public registeredCallback = address(0x0);
 
     constructor () public ERC20("Covesting", "COV") {
         _setRoleAdmin(ROLE_ADMIN, ROLE_ADMIN);
@@ -80,9 +80,9 @@ contract COVToken is ERC20, AccessControl {
         require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] > now)|| hasRole(ROLE_TRANSFER, _msgSender()), "Token transfer locked");
         super._transfer(sender, recipient, amount);				
 
-        if (registeredCallbacks[recipient]) {
-          ITransferContarctCallback targetCallback = ITransferContarctCallback(recipient);
-          targetCallback.tokenFallback(sender, amount);
+        if (registeredCallback != address(0x0)) {
+          ITransferContarctCallback targetCallback = ITransferContarctCallback(registeredCallback);
+          targetCallback.tokenFallback(sender, recipient, amount);
         }
 		}
 
@@ -126,11 +126,11 @@ contract COVToken is ERC20, AccessControl {
     }
 
     function registerCallback(address callback) public onlyRole(ROLE_ADMIN) {
-      registeredCallbacks[callback] = true;
+      registeredCallback = callback;
     }
 
-    function deregisterCallback(address callback) public onlyRole(ROLE_ADMIN) {
-      registeredCallbacks[callback] = false;
+    function deregisterCallback() public onlyRole(ROLE_ADMIN) {
+      registeredCallback = address(0x0);
     }
 
 }
