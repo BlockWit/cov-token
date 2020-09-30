@@ -57,6 +57,17 @@ contract COVToken is ERC20, AccessControl {
         _;
     }
 
+    function burn(uint256 amount) public virtual {
+        _burn(_msgSender(), amount);
+    }
+
+    function burnFrom(address account, uint256 amount) public virtual {
+        uint256 decreasedAllowance = allowance(account, _msgSender()).sub(amount, "ERC20: burn amount exceeds allowance");
+
+        _approve(account, _msgSender(), decreasedAllowance);
+        _burn(account, amount);
+    }
+
     function _burn(address account, uint256 amount) internal virtual override {
         require(!tempFuncLocks[LOCK_BURN] || hasRole(ROLE_BURNER, _msgSender()), "Token burn locked");
         super._burn(account, amount);				
