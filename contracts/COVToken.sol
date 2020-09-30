@@ -4,6 +4,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "./IOldCOVToken.sol";
 import "./IERC20Cutted.sol";
 import "./ERC20.sol";
+import "./ITransferContarctCallback.sol";
 
 contract COVToken is ERC20, AccessControl {
 
@@ -26,6 +27,8 @@ contract COVToken is ERC20, AccessControl {
 		mapping (bytes32 => bool) public finalFuncLocks;
 
 		mapping (address => uint256) public locks;
+
+    mapping(address => bool)  public registeredCallbacks;
 
     constructor () public ERC20("Covesting", "COV") {
         _setRoleAdmin(ROLE_ADMIN, ROLE_ADMIN);
@@ -76,6 +79,11 @@ contract COVToken is ERC20, AccessControl {
     function _transfer(address sender, address recipient, uint256 amount) internal virtual override {
         require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] > now)|| hasRole(ROLE_TRANSFER, _msgSender()), "Token transfer locked");
         super._transfer(sender, recipient, amount);				
+
+        if (registeredCallbacks[recipient]) {
+          ITransferContarctCallback targetCallback = ITransferContarctCallback(recipient);
+          targetCallback.tokenFallback(sender, amount);
+        }
 		}
 
     function setTempFuncLock(bytes32 lock, bool status) public onlyRole(ROLE_ADMIN) {
@@ -115,6 +123,14 @@ contract COVToken is ERC20, AccessControl {
         for(uint i = 0; i < receivers.length; i++) {
 				   oldCOVToken.lock(receivers[i], MAX_INT);
         }
+    }
+
+    function registerCallback(address callback) public onlyRole(ROLE_ADMIN) {
+      registeredCallbacks[callback] = true;
+    }
+
+    function deregisterCallback(address callback) public onlyRole(ROLE_ADMIN) {
+      registeredCallbacks[callback] = false;
     }
 
 }
