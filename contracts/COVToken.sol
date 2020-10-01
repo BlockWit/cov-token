@@ -6,9 +6,10 @@ import "./IERC20Cutted.sol";
 import "./ERC20.sol";
 import "./ITransferContarctCallback.sol";
 
+
 contract COVToken is ERC20, AccessControl {
 
-		IOldCOVToken public oldCOVToken = IOldCOVToken(0xE2FB6529EF566a080e6d23dE0bd351311087D567);
+    IOldCOVToken public oldCOVToken = IOldCOVToken(0xE2FB6529EF566a080e6d23dE0bd351311087D567);
 
     uint256 public constant MAX_INT = uint256(-1);
 
@@ -23,10 +24,10 @@ contract COVToken is ERC20, AccessControl {
     bytes32 public constant LOCK_MINT = bytes32(uint256(2));
     bytes32 public constant LOCK_ADDR_TIME_LOCK = bytes32(uint256(3));
 
-		mapping (bytes32 => bool) public tempFuncLocks;
-		mapping (bytes32 => bool) public finalFuncLocks;
+    mapping(bytes32 => bool) public tempFuncLocks;
+    mapping(bytes32 => bool) public finalFuncLocks;
 
-		mapping (address => uint256) public locks;
+    mapping(address => uint256) public locks;
 
     address public registeredCallback = address(0x0);
 
@@ -66,25 +67,9 @@ contract COVToken is ERC20, AccessControl {
 
     function burnFrom(address account, uint256 amount) public virtual {
         uint256 decreasedAllowance = allowance(account, _msgSender()).sub(amount, "ERC20: burn amount exceeds allowance");
-
         _approve(account, _msgSender(), decreasedAllowance);
         _burn(account, amount);
     }
-
-    function _burn(address account, uint256 amount) internal virtual override {
-        require(!tempFuncLocks[LOCK_BURN] || hasRole(ROLE_BURNER, _msgSender()), "Token burn locked");
-        super._burn(account, amount);				
-    }
-
-    function _transfer(address sender, address recipient, uint256 amount) internal virtual override {
-        require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] < now)|| hasRole(ROLE_TRANSFER, _msgSender()), "Token transfer locked");
-        super._transfer(sender, recipient, amount);				
-
-        if (registeredCallback != address(0x0)) {
-          ITransferContarctCallback targetCallback = ITransferContarctCallback(registeredCallback);
-          targetCallback.tokenFallback(sender, recipient, amount);
-        }
-		}
 
     function setTempFuncLock(bytes32 lock, bool status) public onlyRole(ROLE_ADMIN) {
         tempFuncLocks[lock] = status;
@@ -111,26 +96,40 @@ contract COVToken is ERC20, AccessControl {
         alienToken.transfer(to, alienToken.balanceOf(address(this)));
     }
 
-		function distributeMint(address[] memory receivers, uint[] memory balances) public onlyRole(ROLE_MINTER) notFinalFuncLocked(LOCK_MINT) {
-        for(uint i = 0; i < receivers.length; i++) {
-           _totalSupply = _totalSupply.add(balances[i]);
-           _balances[receivers[i]] = _balances[receivers[i]].add(balances[i]);
-           emit Transfer(address(0), receivers[i], balances[i]);
+    function distributeMint(address[] memory receivers, uint[] memory balances) public onlyRole(ROLE_MINTER) notFinalFuncLocked(LOCK_MINT) {
+        for (uint i = 0; i < receivers.length; i++) {
+            _totalSupply = _totalSupply.add(balances[i]);
+            _balances[receivers[i]] = _balances[receivers[i]].add(balances[i]);
+            emit Transfer(address(0), receivers[i], balances[i]);
         }
     }
 
     function distributeLockOldToken(address[] memory receivers) public onlyRole(ROLE_ADMIN) {
-        for(uint i = 0; i < receivers.length; i++) {
-				   oldCOVToken.lock(receivers[i], MAX_INT);
+        for (uint i = 0; i < receivers.length; i++) {
+            oldCOVToken.lock(receivers[i], MAX_INT);
         }
     }
 
     function registerCallback(address callback) public onlyRole(ROLE_ADMIN) {
-      registeredCallback = callback;
+        registeredCallback = callback;
     }
 
     function deregisterCallback() public onlyRole(ROLE_ADMIN) {
-      registeredCallback = address(0x0);
+        registeredCallback = address(0x0);
+    }
+
+    function _burn(address account, uint256 amount) internal virtual override {
+        require(!tempFuncLocks[LOCK_BURN] || hasRole(ROLE_BURNER, _msgSender()), "Token burn locked");
+        super._burn(account, amount);
+    }
+
+    function _transfer(address sender, address recipient, uint256 amount) internal virtual override {
+        require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] < now) || hasRole(ROLE_TRANSFER, _msgSender()), "Token transfer locked");
+        super._transfer(sender, recipient, amount);
+        if (registeredCallback != address(0x0)) {
+            ITransferContarctCallback targetCallback = ITransferContarctCallback(registeredCallback);
+            targetCallback.tokenFallback(sender, recipient, amount);
+        }
     }
 
 }
