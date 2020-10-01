@@ -42,5 +42,8 @@ _creator_ - https://ropsten.etherscan.io/address/0xac38afd62564d33d26f847cdfc5e3
 #### Txs
 1. Creation - https://ropsten.etherscan.io/tx/0x73c17f2615ee62dbb9f51afd386c44761c6fdb11d63dc622f6a2de65633f3987
 2. Mint by creator 10 COV to 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 - https://ropsten.etherscan.io/tx/0xb582d9c9a7d6b1060a7d5af735d68b181560029e20ca43ee461d818fd47f9e29
+3. Burn 5 COV by tokenholder from 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 - https://ropsten.etherscan.io/tx/0xbb31cd8f0836891598fdf21c8a4473ebebc79d4cf8db79a49e6902e75602acb9
+4. Send 3 COV by tokenholder from 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 to 0xaC38afD62564d33d26f847CdFc5e3590b94cF7C3 - https://ropsten.etherscan.io/tx/0x216e2cac9fd3638afccb1fe55a269aeb2490775ecbd2c1889502463b1ab3ab70
+5. Burn 2 COV by admin from 0xaC38afD62564d33d26f847CdFc5e3590b94cF7C3 - https://ropsten.etherscan.io/tx/0x4d692731327408a2cd77cecc4c0e94228d5c294b61721d7447d234b70cf1c9f6
 
 
