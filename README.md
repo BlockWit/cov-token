@@ -36,7 +36,7 @@ EXODUS not support ERC20, but have way to export key into MyEtherWallet - http:/
 1. _Token_ -
 
 ## Tests
-### Tests in Ropsten 1 - commit - 5d1d97383fde3e3adaf8cf4044c5bd8ad0b4fa1e - обнаружена ошибка и исправлена в коммите - 
+### Tests in Ropsten 1 - commit - 5d1d97383fde3e3adaf8cf4044c5bd8ad0b4fa1e - обнаружена ошибка и исправлена в коммите - 57624697366ab2b738dc4679df53432c53025a88
 
 _token_ - https://ropsten.etherscan.io/token/0x2da6c0dc45bffc825637732924ff1a0eb4eb27eb
 
@@ -62,7 +62,7 @@ _creator_ - https://ropsten.etherscan.io/address/0xac38afd62564d33d26f847cdfc5e3
 17. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 - https://ropsten.etherscan.io/tx/0x9510854c8853ab74a3df9e51e8209be180eafdd63186174e916d9f16b4617afb - попытка не прошла, тест успешный
 18. Transfer админом 0.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0xea0fb9b1e750f93b13f108a3046cc6024b7012fad24eb1290bff6362e76963e8 и https://ropsten.etherscan.io/tx/0xa325d4ac4adb7defac0d70e3e9b3fc0975441a57f704db41165d44f143c7fad0
 19. Разблокировка transfer пользователя - https://ropsten.etherscan.io/tx/0xe5b4528ccd801dbd18718fee90bf1d4121317fbb3f8d45f0e9ce38ced017c1ed
-20. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 - обнаружена ошибка в функции \_transfer в COVToken в условии проверки - "locks[sender] > now" - исправлено в коммите -
+20. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 - обнаружена ошибка в функции \_transfer в COVToken в условии проверки - "locks[sender] > now" - исправлено в коммите - 57624697366ab2b738dc4679df53432c53025a88
 21. Transfer админом 1.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - не выполнялся
 
 
