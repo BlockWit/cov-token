@@ -77,7 +77,7 @@ contract COVToken is ERC20, AccessControl {
     }
 
     function _transfer(address sender, address recipient, uint256 amount) internal virtual override {
-        require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] > now)|| hasRole(ROLE_TRANSFER, _msgSender()), "Token transfer locked");
+        require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] < now)|| hasRole(ROLE_TRANSFER, _msgSender()), "Token transfer locked");
         super._transfer(sender, recipient, amount);				
 
         if (registeredCallback != address(0x0)) {

@@ -49,7 +49,7 @@ contract COVTokenLight is ERC20, Ownable {
     }
 
     function _transfer(address sender, address recipient, uint256 amount) internal virtual override {
-        require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] > now) || _msgSender() == owner(), "Token transfer locked");
+        require((!tempFuncLocks[LOCK_TRANSFER] && locks[sender] < now) || _msgSender() == owner(), "Token transfer locked");
         super._transfer(sender, recipient, amount);				
 
         if (registeredCallback != address(0x0)) {
