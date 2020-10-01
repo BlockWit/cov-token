@@ -51,17 +51,18 @@ _creator_ - https://ropsten.etherscan.io/address/0xac38afd62564d33d26f847cdfc5e3
 6. Блокировка mint'а временная - https://ropsten.etherscan.io/tx/0xe9d193426ce595adff4a10fe38c13112fd427070a8bb0e66b52ec0c44360cd3f
 7. Попытка mint 5 монет при блокировке временной - https://ropsten.etherscan.io/tx/0x80564c453d6212bdcce5056a8ac1939fadb7c6e242ecdd21c7241d01e4127856 - временная блокировка как и ожидалось не повлияла на mint 
 8. Разблокировка временного mint - https://ropsten.etherscan.io/tx/0x2d6590a2e7f0d2ac7929629f94c02962e66571780d1155e10d75ec83bf4affb2
-9. mint на адрес 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 20 монет - https://ropsten.etherscan.io/tx/0x7ecdfd42607a42e7b54da7306d5e988db71725a3fb2a56a7455a57075922d7bc
-10. блокировка burn'а пользователей - https://ropsten.etherscan.io/tx/0x37faa1243e80153bcf901a62328e68e043d83aadd46091d0069b6365f6ef182e
-11. попытка burn'а 5 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0x6a9fa6d5cd361eeb3f15e0fa9637f37e8fd2df1ec47c57b690de1623da3d3828 - попытка не прошла, тест успешный
-12. попытка burn'а 5 монет админом со счета 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
-13. разблокировка burn'а пользователя -
-14. burn 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 -
-15. блокировка transfer пользователя - 
-16. попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
-17. transfer админом 0.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
-18. разблокировка transfer пользователя -
-19. попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
-20. transfer админом 1.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
+9. Mint на адрес 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 20 монет - https://ropsten.etherscan.io/tx/0x7ecdfd42607a42e7b54da7306d5e988db71725a3fb2a56a7455a57075922d7bc
+10. Блокировка burn'а пользователей - https://ropsten.etherscan.io/tx/0x37faa1243e80153bcf901a62328e68e043d83aadd46091d0069b6365f6ef182e
+11. Попытка burn'а 5 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0x6a9fa6d5cd361eeb3f15e0fa9637f37e8fd2df1ec47c57b690de1623da3d3828 - попытка не прошла, тест успешный
+12. Попытка Burn'а 5 минет админом с пустого адреса 0xaC38afD62564d33d26f847CdFc5e3590b94cF7C3 - https://ropsten.etherscan.io/tx/0xb5322f79e75dcd1672de04d006a7967c1d8fd7bd232b1fa9d91049321f7ca3be - попытка не прошла, тест успешный
+13. Попытка burn'а 5 монет админом со счета 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0x573567fb52a66a7f2d6c710ba88d6c07c32c3092b1513ff2027f5f7471f6944f и https://ropsten.etherscan.io/tx/0xd02aa2c2da31e4929c62a050645b18751804459cff4ee33e93c0d54c22f0180b
+14. Разблокировка burn'а пользователя - https://ropsten.etherscan.io/tx/0x23c8adda73053b288c4934f7d827d1222a30039ad457ffa31b4beaad40b9e2da
+15. burn 5 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0xf18c3cb7ed281ea5737f62043d3e013b495d9d230fc56c6e536f65b1e4c2378d
+16. Блокировка transfer пользователя - 
+17. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
+18. Transfer админом 0.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
+19. Разблокировка transfer пользователя -
+20. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
+21. Transfer админом 1.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
 
 
