@@ -58,10 +58,10 @@ _creator_ - https://ropsten.etherscan.io/address/0xac38afd62564d33d26f847cdfc5e3
 13. Попытка burn'а 5 монет админом со счета 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0x573567fb52a66a7f2d6c710ba88d6c07c32c3092b1513ff2027f5f7471f6944f и https://ropsten.etherscan.io/tx/0xd02aa2c2da31e4929c62a050645b18751804459cff4ee33e93c0d54c22f0180b
 14. Разблокировка burn'а пользователя - https://ropsten.etherscan.io/tx/0x23c8adda73053b288c4934f7d827d1222a30039ad457ffa31b4beaad40b9e2da
 15. burn 5 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0xf18c3cb7ed281ea5737f62043d3e013b495d9d230fc56c6e536f65b1e4c2378d
-16. Блокировка transfer пользователя - 
-17. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
-18. Transfer админом 0.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
-19. Разблокировка transfer пользователя -
+16. Блокировка transfer пользователя - https://ropsten.etherscan.io/tx/0xe791d6dcfcb4a3519030905be299e0eec2d72f79aa2ca7e85b59b167fe055edd
+17. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 - https://ropsten.etherscan.io/tx/0x9510854c8853ab74a3df9e51e8209be180eafdd63186174e916d9f16b4617afb - попытка не прошла, тест успешный
+18. Transfer админом 0.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - https://ropsten.etherscan.io/tx/0xea0fb9b1e750f93b13f108a3046cc6024b7012fad24eb1290bff6362e76963e8 и https://ropsten.etherscan.io/tx/0xa325d4ac4adb7defac0d70e3e9b3fc0975441a57f704db41165d44f143c7fad0
+19. Разблокировка transfer пользователя - https://ropsten.etherscan.io/tx/0xe5b4528ccd801dbd18718fee90bf1d4121317fbb3f8d45f0e9ce38ced017c1ed
 20. Попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
 21. Transfer админом 1.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
 
