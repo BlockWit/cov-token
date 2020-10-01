@@ -48,5 +48,19 @@ _creator_ - https://ropsten.etherscan.io/address/0xac38afd62564d33d26f847cdfc5e3
 3. Burn 5 COV by tokenholder from 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 - https://ropsten.etherscan.io/tx/0xbb31cd8f0836891598fdf21c8a4473ebebc79d4cf8db79a49e6902e75602acb9
 4. Send 3 COV by tokenholder from 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 to 0xaC38afD62564d33d26f847CdFc5e3590b94cF7C3 - https://ropsten.etherscan.io/tx/0x216e2cac9fd3638afccb1fe55a269aeb2490775ecbd2c1889502463b1ab3ab70
 5. Burn 2 COV by admin from 0xaC38afD62564d33d26f847CdFc5e3590b94cF7C3 - https://ropsten.etherscan.io/tx/0x4d692731327408a2cd77cecc4c0e94228d5c294b61721d7447d234b70cf1c9f6
+6. Блокировка mint'а -
+7. Попытка mint при блокировке -
+8. Разблокировка mint -
+9. mint на адрес 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 20 монет -
+10. блокировка burn'а пользователя -
+11. попытка burn'а 5 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
+12. разблокировка burn'а пользователя -
+13. burn 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 -
+14. блокировка transfer пользователя - 
+15. попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
+16. transfer админом 0.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
+17. разблокировка transfer пользователя -
+18. попытка transfer 2 монет пользователем 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 на 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 -
+19. transfer админом 1.5 моент с 0xAC38aFD62564D33D26F847cdfc5e3590b94CF7C2 на 0x184C3c86D6a50a88ce59c534Df587a4bADFdA427 - 
 
 
