@@ -10,6 +10,8 @@ const {
   shouldBehaveLikeERC20Approve,
 } = require('./behaviors/ERC20.behavior');
 
+const { shouldBehaveLikeERC20Burnable } = require('./behaviors/ERC20Burnable.behavior');
+
 const Token = contract.fromArtifact('CovToken');
 
 describe('ERC20', function () {
@@ -290,3 +292,17 @@ describe('ERC20', function () {
     });
   });
 });
+
+describe('ERC20Burnable', function () {
+  const [ owner, ...otherAccounts ] = accounts;
+
+  const initialBalance = new BN(1000);
+
+  beforeEach(async function () {
+    this.token = await Token.new();
+    await this.token.adminMint(owner, initialBalance)
+  });
+
+  shouldBehaveLikeERC20Burnable(owner, initialBalance, otherAccounts);
+});
+
