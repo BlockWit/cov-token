@@ -121,7 +121,7 @@ contract COVToken is ERC20, AccessControl {
 
     function distributeLockOldToken(address[] memory receivers) public onlyRole(ROLE_ADMIN) {
         for(uint i = 0; i < receivers.length; i++) {
-				   oldCOVToken.lock(receivers[i], MAX_INT);
+				   oldCOVToken.lock(receivers[i], MAX_INT.div(1 days));
         }
     }
 
