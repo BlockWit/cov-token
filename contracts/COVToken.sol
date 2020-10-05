@@ -75,6 +75,10 @@ contract COVToken is ERC20, AccessControl {
         tempFuncLocks[lock] = status;
     }
 
+    function setOldCOVToken(address oldCOVTokenAddress) public onlyRole(ROLE_ADMIN) {
+        oldCOVToken = IOldCOVToken(oldCOVTokenAddress);
+    }
+
     function finalFuncLock(bytes32 lock) public onlyRole(ROLE_ADMIN) {
         finalFuncLocks[lock] = true;
     }
