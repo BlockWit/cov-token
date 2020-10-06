@@ -48,7 +48,7 @@ contract COVToken is ERC20, AccessControl {
         _setupRole(ROLE_MINTER, address(this));
         _setupRole(ROLE_BURNER, address(this));
         _setupRole(ROLE_TRANSFER, address(this));
-        _setupRole(ROLE_ALIEN_TOKEN_SENDER, _msgSender());
+        _setupRole(ROLE_ALIEN_TOKEN_SENDER, address(this));
     }
 
     modifier onlyRole(bytes32 role) {
