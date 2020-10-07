@@ -1,4 +1,4 @@
-![Covesting Token](logo.png "Covesting token")
+![Covesting Token](logo.jpg "Covesting token")
 
 # Covesting smart contract
 
