@@ -30,10 +30,10 @@ EXODUS not support ERC20, but have way to export key into MyEtherWallet - http:/
 
 ## Main network configuration
 
-* _Contract creator_              : 
+* _Contract creator_              : 0xEA15Adb66DC92a4BbCcC8Bf32fd25E2e86a2A770
 
 ### Links
-1. _Token_ -
+1. _Token_ - https://etherscan.io/token/0xada86b1b313d1d5267e3fc0bb303f0a2b66d0ea7
 
 ## Tests
 ### Tests in Ropsten 1 - commit - 5d1d97383fde3e3adaf8cf4044c5bd8ad0b4fa1e - обнаружена ошибка и исправлена в коммите - 57624697366ab2b738dc4679df53432c53025a88
